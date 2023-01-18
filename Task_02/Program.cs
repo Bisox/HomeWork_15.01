@@ -13,21 +13,27 @@ int InputInt(string enjoy)
 }
 int num = InputInt("Введите произвольное число:");
 
-
+int count = 0;
 if (num >= 100 && num <= 999)
 {
     int a = num % 10;
-    Console.WriteLine($"Третья цифра числа {num}: цифра {a}");
-}
-if (num >= 1000)
-{
-    string str = num.ToString();
-    Console.WriteLine($"Третья цифра числа {num}: цифра {str[2]}");
+    Console.WriteLine($"Третья цифра числа: цифра {a}");
 }
 if (num >= 0 && num <= 99)
 {
     Console.WriteLine("Третьей цифры нет");
 }
+
+if (num >= 1000)
+{
+    while (num > 999)
+    {
+        num = num / 10;
+    }
+    count = num % 10;
+    Console.WriteLine($"Третья цифра числа: цифра {count}");
+}
+
 
 
 
